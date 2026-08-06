@@ -1,7 +1,7 @@
 # Parcial DDS 2025
 
 ## Consigna
-[📄 Ver la consigna en pdf](archivos/primer-parcial-2025-parte-1.pdf)
+[📄 Ver la consigna en pdf](archivos/Primer-Parcial-2025-Parte-I.png)
 ![](archivos/Primer-Parcial-2025-Parte-I.png)
 
 ## Diagrama de clases
