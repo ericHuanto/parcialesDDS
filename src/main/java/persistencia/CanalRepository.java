@@ -22,7 +22,7 @@ public class CanalRepository {
   }
 
   public Canal buscarPorNombre(String nombre) {
-    return canales.stream().filter(c -> c.getNombre().equals(nombre)).toList().get(0);
+    return canales.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElseThrow();
   }
 
   public List<Canal> buscarTodos() {
@@ -33,6 +33,11 @@ public class CanalRepository {
     return this.canales.stream().map(c -> c.getTransmisionEnCurso())
         .filter(t -> t != null)
         .toList();
+  }
+
+  public List<Canal> buscarCanalesConTransmisionesAFinalizar() {
+    List<Canal> canalesConTransmisionEnCurso = this.canales.stream().filter(c -> c.getTransmisionEnCurso()!=null).toList();
+    return canalesConTransmisionEnCurso.stream().filter(c -> c.getTransmisionEnCurso().esHoraDeFinalizarla()).toList();
   }
 
 }

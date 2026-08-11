@@ -10,8 +10,7 @@ public class MuestraApoyo {
   }
 
   public MuestraApoyo(int monto) {
-    this.monto = monto;
-    this.donador = null;
+    this(monto, null);
   }
 
 }
