@@ -3,7 +3,9 @@ package dominio;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
 
+@Getter
 public class Transmision {
   private String titulo;
   private List<Categoria> categorias;
