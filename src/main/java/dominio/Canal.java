@@ -2,28 +2,24 @@ package dominio;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
 
+@Getter
 public class Canal {
   private String nombre;
+  private Usuario dueño;
   private List<Usuario> suscriptores;
   private Transmision transmisionEnCurso;
   private List<Transmision> historialTransmisiones;
-  private List<MuestraApoyo> donacionesRecibidas; // Valores anónimos de 1 a 10
+  private List<MuestraApoyo> donacionesRecibidas;
 
-  public Canal(String nombre) {
+  public Canal(String nombre, Usuario usuario) {
     this.nombre = nombre;
+    this.dueño = usuario;
     this.suscriptores = new ArrayList<>();
     this.transmisionEnCurso = null;
     this.historialTransmisiones = new ArrayList<>();
     this.donacionesRecibidas = new ArrayList<>();
-  }
-
-  public String getNombre() {
-    return this.nombre;
-  }
-
-  public Transmision getTransmisionEnCurso() {
-    return this.transmisionEnCurso;
   }
 
   public void agregarSuscriptor(Usuario usuario) {

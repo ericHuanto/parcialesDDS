@@ -11,7 +11,6 @@ public class Transmision {
   private List<Usuario> participantesActuales;
   private List<Mensaje> mensajes;
   private Integer maxParticipantes;
-  private LocalDateTime fechaFin;
 
   public Transmision(String titulo, List<Categoria> categorias) {
     this.titulo = titulo;
@@ -20,7 +19,6 @@ public class Transmision {
     this.participantesActuales = new ArrayList<>();
     this.mensajes = new ArrayList<>();
     this.maxParticipantes = 0;
-    this.fechaFin = null;
   }
 
   public void recibirParticipante(Usuario usuario) {
@@ -48,11 +46,12 @@ public class Transmision {
   }
 
   public void finalizar() {
-    this.fechaFin = LocalDateTime.now();
-    this.participantesActuales.clear();
+    this.participantesActuales.forEach(p -> sacarParticipante(p));
   }
+
   //================== FUNCIONES AUXILIARES ====================
   private boolean seEncuentraComoEspectador(Usuario usuario) {
     return this.participantesActuales.stream().anyMatch(u -> u.esIgual(usuario));
   }
+
 }
