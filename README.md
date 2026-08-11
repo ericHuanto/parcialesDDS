@@ -5,4 +5,4 @@
 ![](archivos/Pimer-Parcial-2025-Parte-II.png)
 
 ## Diagrama de clases
-![](archivos/.....)
+![](archivos/diagrama-clases.png)
