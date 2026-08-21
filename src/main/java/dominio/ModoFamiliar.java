@@ -1,6 +1,6 @@
 package dominio;
 
-import serviciosexternos.AnalizadorTexto;
+import servicioexterno.AnalizadorTexto;
 
 public class ModoFamiliar implements Preferencia {
   private AnalizadorTexto analizador;

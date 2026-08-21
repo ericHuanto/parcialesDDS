@@ -13,7 +13,7 @@ public class CategoriaRepository {
     this.categorias = new ArrayList<>();
   }
 
-  public static CategoriaRepository getInstance() {
+  public static CategoriaRepository getInstancia() {
     return INSTANCE;
   }
 

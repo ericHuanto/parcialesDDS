@@ -31,6 +31,9 @@ public class Canal {
   }
 
   public void iniciarTransmision(Transmision transmision) {
+    if (estaEnLive())
+      throw new RuntimeException("No puedes iniciar Live, porque ya tiene una transmisión en curso");
+
     this.transmisionEnCurso = transmision;
   }
 
@@ -38,6 +41,10 @@ public class Canal {
     this.transmisionEnCurso.finalizar();
     this.historialTransmisiones.add(this.transmisionEnCurso);
     this.transmisionEnCurso = null;
+  }
+
+  public Boolean estaEnLive() {
+    return this.transmisionEnCurso != null;
   }
 
   public void recibirDonacion(MuestraApoyo muestraApoyo) {

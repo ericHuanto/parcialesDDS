@@ -1,4 +1,4 @@
-package serviciosexternos;
+package servicioexterno;
 
 import dominio.Idioma;
 

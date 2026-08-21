@@ -1,3 +1,5 @@
+package cron;
+
 import dominio.Canal;
 import java.util.List;
 import persistencia.CanalRepository;
@@ -5,7 +7,7 @@ import persistencia.CanalRepository;
 public class TerminadorTransmisiones {
 
   public static void main(String[] args) {
-    CanalRepository repoCanales = CanalRepository.getInstance();
+    CanalRepository repoCanales = CanalRepository.getInstancia();
     List<Canal> canalesEnVivo = repoCanales.buscarCanalesConTransmisionesAFinalizar();
 
     canalesEnVivo.forEach(c -> c.finalizarTransmision());

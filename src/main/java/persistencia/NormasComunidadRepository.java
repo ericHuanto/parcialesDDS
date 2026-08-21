@@ -13,7 +13,7 @@ public class NormasComunidadRepository {
     this.normas = new ArrayList<>();
   }
 
-  public static NormasComunidadRepository getInstance() {
+  public static NormasComunidadRepository getInstancia() {
     return INSTANCE;
   }
 

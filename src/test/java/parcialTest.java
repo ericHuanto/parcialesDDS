@@ -24,7 +24,7 @@ import dominio.Usuario;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import serviciosexternos.AnalizadorTexto;
+import servicioexterno.AnalizadorTexto;
 
 public class parcialTest {
   private Usuario eric;
@@ -127,7 +127,7 @@ public class parcialTest {
     //Para cumplir con este requerimiento es necesario del sistema operativo
     //vamos a tener que configurar el crontab de linux o el programador de tareas de windows
     //ya sea que usemos linux o windows vamos a necesitar tener un main.
-    //Ver TerminadorTransmisiones
+    //Ver TerminadorTransmisiones en la carpeta cron
   }
 
 }

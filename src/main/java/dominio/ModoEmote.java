@@ -1,6 +1,6 @@
 package dominio;
 
-import serviciosexternos.AnalizadorTexto;
+import servicioexterno.AnalizadorTexto;
 
 public class ModoEmote implements Preferencia {
   private AnalizadorTexto analizador;

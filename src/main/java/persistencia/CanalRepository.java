@@ -13,7 +13,7 @@ public class CanalRepository {
     this.canales = new ArrayList<>();
   }
 
-  public static CanalRepository getInstance() {
+  public static CanalRepository getInstancia() {
     return INSTANCE;
   }
   // Esta función se usa después de crear un canal para el usuario, en el controller o si somos más puristas en el service.
@@ -30,14 +30,15 @@ public class CanalRepository {
   }
 
   public List<Transmision> buscarTodasTransmisionesEnCurs() {
-    return this.canales.stream().map(c -> c.getTransmisionEnCurso())
-        .filter(t -> t != null)
+    return this.canales.stream()
+        .filter(c -> c.estaEnLive())
+        .map(c -> c.getTransmisionEnCurso())
         .toList();
   }
 
   public List<Canal> buscarCanalesConTransmisionesAFinalizar() {
-    List<Canal> canalesConTransmisionEnCurso = this.canales.stream().filter(c -> c.getTransmisionEnCurso()!=null).toList();
-    return canalesConTransmisionEnCurso.stream().filter(c -> c.getTransmisionEnCurso().esHoraDeFinalizarla()).toList();
+    List<Canal> canalesEnLive = this.canales.stream().filter(c -> c.estaEnLive()).toList();
+    return canalesEnLive.stream().filter(c -> c.getTransmisionEnCurso().esHoraDeFinalizarla()).toList();
   }
 
 }
